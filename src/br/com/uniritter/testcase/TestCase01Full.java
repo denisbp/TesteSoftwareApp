@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 import br.com.uniritter.common.TestCaseCommon;
+import br.com.uniritter.page.TrelloBoardsPage;
 import br.com.uniritter.page.TrelloLoginPage;
 
 public class TestCase01Full extends TestCaseTrello {
@@ -39,7 +40,8 @@ public class TestCase01Full extends TestCaseTrello {
 		loginPage.login();
 
 		// Create new Board
-		TestCaseCommon.getDriver().findElement(By.cssSelector("a.board-tile.mod-add > span")).click();
+		TrelloBoardsPage boardsPage = new TrelloBoardsPage();
+		boardsPage.getButtonNewBoard().click();
 		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).clear();
 		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).sendKeys("Teste de Software " + TestCaseCommon.getTimestamp());
 		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Create']")).click();
@@ -53,7 +55,8 @@ public class TestCase01Full extends TestCaseTrello {
 		loginPage.login();
 
 		// Create new Board
-		TestCaseCommon.getDriver().findElement(By.cssSelector("a.board-tile.mod-add > span")).click();
+		TrelloBoardsPage boardsPage = new TrelloBoardsPage();
+		boardsPage.getButtonNewBoard().click();
 		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).clear();
 		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).sendKeys("Teste de Software " + TestCaseCommon.getTimestamp());
 		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Create']")).click();
