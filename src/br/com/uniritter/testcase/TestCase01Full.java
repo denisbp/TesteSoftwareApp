@@ -36,7 +36,7 @@ public class TestCase01Full extends TestCaseTrello {
 		// Login
 		TrelloLoginPage loginPage = new TrelloLoginPage();
 		assertEquals("Log in to Trello", loginPage.getTitle());
-		loginPage.Login("denisbp+trello@gmail.com", "testesoftware");
+		loginPage.login();
 
 		// Create new Board
 		TestCaseCommon.getDriver().findElement(By.cssSelector("a.board-tile.mod-add > span")).click();
@@ -50,7 +50,7 @@ public class TestCase01Full extends TestCaseTrello {
 		// Login
 		TrelloLoginPage loginPage = new TrelloLoginPage();
 		assertEquals("Log in to Trello", loginPage.getTitle());
-		loginPage.Login("denisbp+trello@gmail.com", "testesoftware");
+		loginPage.login();
 
 		// Create new Board
 		TestCaseCommon.getDriver().findElement(By.cssSelector("a.board-tile.mod-add > span")).click();

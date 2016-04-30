@@ -41,7 +41,11 @@ public class TrelloLoginPage extends GenericPage{
 		this.buttonLogin = buttonLogin;
 	}
 	
-	public void Login(String username, String password) {
+	public void login() {
+		this.login("denisbp+trello@gmail.com", "testesoftware");
+	}
+	
+	public void login(String username, String password) {
 		inputUsername.clear(); // WebElement
 		inputUsername.sendKeys(username);
 		inputPassword.clear();
