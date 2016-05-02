@@ -36,15 +36,12 @@ public class TestCase01Full extends TestCaseTrello {
 	public void testCreateBoard() throws Exception {
 		// Login
 		TrelloLoginPage loginPage = new TrelloLoginPage();
-		assertEquals("Log in to Trello", loginPage.getTitle());
 		loginPage.login();
 
 		// Create new Board
 		TrelloBoardsPage boardsPage = new TrelloBoardsPage();
-		boardsPage.getButtonNewBoard().click();
-		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).clear();
-		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).sendKeys("Teste de Software " + TestCaseCommon.getTimestamp());
-		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Create']")).click();
+		boardsPage.createNewBoard("Teste de Software " + TestCaseCommon.getTimestamp());
+		//assertEquals(boardsPage.getNewTitleElement().get, "");
 	}
 
 	@Test
