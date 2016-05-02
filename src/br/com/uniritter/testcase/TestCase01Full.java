@@ -53,10 +53,7 @@ public class TestCase01Full extends TestCaseTrello {
 
 		// Create new Board
 		TrelloBoardsPage boardsPage = new TrelloBoardsPage();
-		boardsPage.getButtonNewBoard().click();
-		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).clear();
-		TestCaseCommon.getDriver().findElement(By.id("boardNewTitle")).sendKeys("Teste de Software " + TestCaseCommon.getTimestamp());
-		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Create']")).click();
+		boardsPage.createNewBoard("Teste de Software " + TestCaseCommon.getTimestamp());
 
 		// Create Lists
 		// TestCaseCommon.getDriver().get(baseUrl +
