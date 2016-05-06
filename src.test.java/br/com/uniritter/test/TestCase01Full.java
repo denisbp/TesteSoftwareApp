@@ -1,4 +1,4 @@
-package br.com.uniritter.testcase;
+package br.com.uniritter.test;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 
 import br.com.uniritter.common.TestCaseCommon;
 import br.com.uniritter.page.TrelloBoardsPage;
+import br.com.uniritter.page.TrelloListsPage;
 import br.com.uniritter.page.TrelloLoginPage;
 
 public class TestCase01Full extends TestCaseTrello {
@@ -48,7 +49,7 @@ public class TestCase01Full extends TestCaseTrello {
 	public void testStandardActivities() throws Exception {
 		// Login
 		TrelloLoginPage loginPage = new TrelloLoginPage();
-		assertEquals("Log in to Trello", loginPage.getTitle());
+		//assertEquals("Log in to Trello", loginPage.getTitle());
 		loginPage.login();
 
 		// Create new Board
@@ -58,16 +59,10 @@ public class TestCase01Full extends TestCaseTrello {
 		// Create Lists
 		// TestCaseCommon.getDriver().get(baseUrl +
 		// "/b/7fAwPVeV/teste-de-software");
-		TestCaseCommon.getDriver().findElement(By.cssSelector("span.placeholder.js-open-add-list")).click();
-		TestCaseCommon.getDriver().findElement(By.name("name")).clear();
-		TestCaseCommon.getDriver().findElement(By.name("name")).sendKeys("Test List");
-		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Save']")).click();
-		TestCaseCommon.getDriver().findElement(By.name("name")).clear();
-		TestCaseCommon.getDriver().findElement(By.name("name")).sendKeys("Activity List");
-		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Save']")).click();
-		TestCaseCommon.getDriver().findElement(By.name("name")).clear();
-		TestCaseCommon.getDriver().findElement(By.name("name")).sendKeys("Personal List");
-		TestCaseCommon.getDriver().findElement(By.xpath("//input[@value='Save']")).click();
+		TrelloListsPage listsPage = new TrelloListsPage();
+		listsPage.createList("Test List");
+		listsPage.createList("Activity List");
+		listsPage.createList("Personal List");
 
 		// Create Cards
 		// TestCaseCommon.getDriver().get(baseUrl +

@@ -1,4 +1,4 @@
-package br.com.uniritter.testcase;
+package br.com.uniritter.test;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
